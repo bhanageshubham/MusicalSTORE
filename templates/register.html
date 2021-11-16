@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register here</title>
+    <style>
+        th{color: white}
+    </style>
+</head>
+<body>
+ {% include 'header.html' %}
+  <br> <br> <br> <br><br>
+<div>
+    {% for m in messages %}
+    <h2 style="color:red">{{m}}</h2>
+    {% endfor %}
+</div>
+<form action="register" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+            <th>FirstName</th>
+            <td><input type="text" name="fname"></td>
+        </tr>
+
+          <tr>
+            <th>LastName</th>
+            <td><input type="text" name="lname"></td>
+        </tr>
+
+          <tr>
+            <th>UserName</th>
+            <td><input type="text" name="uname"></td>
+        </tr>
+
+          <tr>
+            <th>EmailId</th>
+            <td><input type="email" name="email"></td>
+        </tr>
+
+          <tr>
+            <th>Password</th>
+            <td><input type="password" name="pass1"></td>
+        </tr>
+
+          <tr>
+            <th>Confirm Password</th>
+            <td><input type="password" name="pass2"></td>
+        </tr>
+         <td align="center" colspan="2"><input type="submit" value="Register">
+          <input type="reset" value="Cancel"></td>
+    </table>
+</form>
+  <br> <br> <br> <br><br>
+{% include 'footer.html' %}
+</body>
+</html>
